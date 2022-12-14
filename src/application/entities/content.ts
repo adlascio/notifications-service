@@ -6,11 +6,12 @@ export class Content {
   }
 
   private validateContentLength(content: string): boolean {
-    return content.length < 5 || content.length > 255;
+    return content.length >= 5 && content.length <= 255;
   }
 
   constructor(content: string) {
     const isValid = this.validateContentLength(content);
+    console.log('isValid', isValid);
 
     if (!isValid) {
       throw new Error('Content must be between 5 and 255 characters');
