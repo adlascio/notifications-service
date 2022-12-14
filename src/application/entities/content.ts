@@ -11,7 +11,6 @@ export class Content {
 
   constructor(content: string) {
     const isValid = this.validateContentLength(content);
-    console.log('isValid', isValid);
 
     if (!isValid) {
       throw new Error('Content must be between 5 and 255 characters');
